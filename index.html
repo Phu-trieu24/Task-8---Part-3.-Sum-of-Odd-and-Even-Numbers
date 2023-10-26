@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 8 - Part 3. Sum of Odd and Even Numbers</title>
+</head>
+<body>
+    <h1>Task 8 - Part 3. Sum of Odd and Even Numbers</h1>
+    <label for="inputNumber">Input: </label>
+    <input type="number" id="inputNumber" name= "inputNumber" >
+    <button onclick="calculateSums()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateSums() {
+            const inputNumber = parseInt(document.getElementById("inputNumber").value);
+
+            if (isNaN(inputNumber)) {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            let sumOdd = 0;
+            let sumEven = 0;
+
+            for (let i = 1; i <= inputNumber; i++) {
+                if (i % 2 === 0) {
+                    // Even number
+                    sumEven += i;
+                } else {
+                    // Odd number
+                    sumOdd += i;
+                }
+            }
+
+            document.getElementById("result").textContent = "Answer: Sum of Odd = " + sumOdd + ", Sum of Even = " + sumEven;
+        }
+    </script>
+</body>
+</html>
